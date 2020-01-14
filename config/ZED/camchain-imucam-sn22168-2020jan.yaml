@@ -1,0 +1,45 @@
+# The modifications of the output file from Kalibr:
+# 1. For each matrix (e.g. cam0/T_cam_imu), remove the brackets and minus sign for each line. Use one pair of brackets for each matrix.
+# 2. Add the T_imu_body at the end of the calibration file (usually set to identity).
+cam0:
+  T_cam_imu:
+    [0.0, -1.0, 0.0, 0.06,
+    0.0, 0.0, -1, 0.0,
+    1.0, 0.0, 0.0, -0.15,
+    0.0, 0.0, 0.0, 1.0]
+  cam_overlaps: [1]
+  camera_model: pinhole
+  distortion_coeffs: [-0.17078487810504717, 0.02600642234459207, -0.0007533720972204551,
+    0.0012599130142479497]
+  distortion_model: radtan
+  intrinsics: [349.6627753308658, 348.65757721461506, 333.47599403314143, 183.63964915012858]
+  resolution: [672, 376]
+  rostopic: /zed/left/image_raw_color
+  timeshift_cam_imu: 0.03420859459007289
+cam1:
+ # this transform coordinate in imu to coordinate in camera
+  T_cam_imu:
+    [0.0, -1.0, 0.0, -0.06,
+    0.0, 0.0, -1.0, 0.0,
+    1.0, 0.0, 0.0, -0.15,
+    0.0, 0.0, 0.0, 1.0]
+  T_cn_cnm1:
+    [0.9999625853109196, 0.00025912937149873697, 0.008646434540530771, -0.11965918298454918,
+    -0.0002526919775486275, 0.9999996901148194, -0.0007455984326615538, -0.00011680741687514735,
+    -0.008646625067582119, 0.000743385651685228, 0.99996234091725, -0.0003570883204716309,
+    0.0, 0.0, 0.0, 1.0]
+  cam_overlaps: [0]
+  camera_model: pinhole
+  distortion_coeffs: [-0.1698380789906735, 0.025576952168946426, -0.00041700122752143264,
+    0.0012745010460000156]
+  distortion_model: radtan
+  intrinsics: [347.931632823117, 346.615393214119, 329.01713861620686, 168.25941068443092]
+  resolution: [672, 376]
+  rostopic: /zed/right/image_raw_color
+  timeshift_cam_imu: 0.034153737106002155
+
+T_imu_body:
+  [1.0000, 0.0000, 0.0000, 0.0000,
+  0.0000, 1.0000, 0.0000, 0.0000,
+  0.0000, 0.0000, 1.0000, 0.0000,
+  0.0000, 0.0000, 0.0000, 1.0000]

@@ -3,6 +3,8 @@ project(msckf_vio)
 
 add_compile_options(-std=c++11)
 
+add_definitions (-Wall -O3)
+
 # Modify cmake module path if new .cmake files are required
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
